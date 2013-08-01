@@ -305,6 +305,8 @@ strong {
     }
     scope.addToUserData = function() {
        scope.userDataArray.push(angular.copy(scope.userData));
+       scope.userData = { order: 0 };
+        scope.userData=angular.copy(scope.fields);
     }
 
 
