@@ -5,71 +5,12 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Event360</title>
+        <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <style>h2 {
-    font-size: 140%;
-    margin: 10px 0;
-    font-weight: bold;
-}
-.input {
-    margin: 10px;
-}
-/*.edit {
-    font-weight: bold;
-    color: green;
-}
-.delete {
-    font-weight: bold;
-    color: red;
-}*/
-label {
-    width: 50%;
-    text-align: right;
-    display: inline-block;
-}
-input, select {
-
-}
-.radio fieldset label, .checkboxes fieldset label {
-    display: block;
-    text-align: left;
-}
-.radio fieldset label input, .checkboxes fieldset label input {
-    margin-right: 5px;
-}
-h3 {
-    border-top: 2px solid #ccc;
-    margin-top: 20px;
-    padding-top: 5px;
-}
-.required label:after {
-    color: #e32;
-    content: '*';
-    display:inline;
-}
-.order {
-    color: #ccc;
-}
-fieldset {
-    border: 1px solid #eee;
-    margin: 10px;
-    padding: 0 10px;
-}
-fieldset legend {
-    margin: 10px;
-}
-fieldset label {
-    width: auto;
-}
-fieldset div {
-    margin: 10px 0;
-}
-strong {
-    font-weight: bold; 
-}
-        </style>
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+       
+              <link rel="stylesheet" href="css/app.css"/>
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" href="lib/bootstrap-datepicker/css/datepicker.css"/>
     </head>
     <body>
         <script src="http://code.angularjs.org/angular-0.10.5.js" ng:autobind></script>
@@ -89,7 +30,7 @@ strong {
                         <li  class="dropdown">
                             <a  class="dropdown-toggle active"
                                 data-toggle="dropdown">
-                                <i class="icon-th-list"></i>&nbsp;Bills
+                                <i class="icon-th-list"></i>&nbsp;Events
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
@@ -319,7 +260,7 @@ strong {
     </body>
 </html>
 <script src="http://codeorigin.jquery.com/jquery-2.0.3.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
 
 <script>function FormBuilderCtrl(){
     var scope = this;
