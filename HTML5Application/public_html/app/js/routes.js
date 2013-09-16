@@ -1,5 +1,5 @@
 event.config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/events/list', {templateUrl: 'partials/events/list.html'});
+    $routeProvider.when('/events/list', {templateUrl: 'partials/events/list.html',controller:'eventCtrl'});
 //    $routeProvider.when('/bills/add', {templateUrl: 'partials/bills/add.html', controller: 'BillAddCtrl'});
     $routeProvider.otherwise({redirectTo: '/events/list'});
   }]);
