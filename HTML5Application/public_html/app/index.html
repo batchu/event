@@ -28,6 +28,20 @@ and open the template in the editor.
 
 
                     <ul class="nav nav-pills">
+ <li  class="dropdown">
+                            <a  class="dropdown-toggle active"
+                                data-toggle="dropdown">
+                                <i class="icon-th-list"></i>&nbsp;Schema
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- links -->
+                                <li><a tabindex="-1" href="#/schema/add">Add</a></li>
+                                <li><a tabindex="-1" href="#/schema/list">List</a></li>
+<!--                                <li class="divider"></li>
+                                <li><a tabindex="-1" href="#">Reports</a></li>-->
+                            </ul>
+                        </li>
                         <li  class="dropdown">
                             <a  class="dropdown-toggle active"
                                 data-toggle="dropdown">
@@ -36,30 +50,29 @@ and open the template in the editor.
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- links -->
-                                <li><a tabindex="-1" href="#/bills/add">Add</a></li>
-                                <li><a tabindex="-1" href="#/bills/list">List</a></li>
-                                <li class="divider"></li>
-                                <li><a tabindex="-1" href="#">Reports</a></li>
+                                <li><a tabindex="-1" href="#/events/add">Add</a></li>
+                                <li><a tabindex="-1" href="#/events/list">List</a></li>
+<!--                                <li class="divider"></li>
+                                <li><a tabindex="-1" href="#">Reports</a></li>-->
                             </ul>
                         </li>
-                        <li><a href="#/listFriends"><i class="icon-heart"></i>&nbsp;Friends</a></li>
-                        <!--<li><a href="#/listGroups"><i class="icon-tags"></i>&nbsp;Groups</a></li>-->
-                        
-                        
-                         <li  class="dropdown">
+                        <li  class="dropdown">
                             <a  class="dropdown-toggle active"
                                 data-toggle="dropdown">
-                                <i class="icon-th-list"></i>&nbsp;Groups
+                                <i class="icon-th-list"></i>&nbsp;Registrations
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- links -->
-                                <li><a tabindex="-1" href="#/groups/add">Add</a></li>
-                                <li><a tabindex="-1" href="#/groups/list">List</a></li>
-                                <li class="divider"></li>
-                                <li><a tabindex="-1" href="#">Reports</a></li>
+                                <li><a tabindex="-1" href="#/submissions/add">Add</a></li>
+                                <li><a tabindex="-1" href="#/submissions/list">List</a></li>
+<!--                                <li class="divider"></li>
+                                <li><a tabindex="-1" href="#">Reports</a></li>-->
                             </ul>
                         </li>
+                        
+                        
+                         
 
                     </ul>
 
@@ -77,12 +90,11 @@ and open the template in the editor.
 
 
         <div class="container">
-            <div class="row clearfix">
-                <div class="span8">
+            
                     <div ng-view>
        </div>
-                    </div>
-                </div>
+                    
+        </div>
             
     </body>
 </html>
