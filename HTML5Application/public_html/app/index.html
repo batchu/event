@@ -3,7 +3,7 @@ To change this template, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html>
+<html ng-app>
     <head>
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -13,7 +13,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="lib/bootstrap-datepicker/css/datepicker.css"/>
     </head>
     <body>
-        <script src="http://code.angularjs.org/angular-0.10.5.js" ng:autobind></script>
+      
         
          <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
@@ -261,9 +261,9 @@ and open the template in the editor.
 </html>
 <script src="http://codeorigin.jquery.com/jquery-2.0.3.js"></script>
 <script src="lib/bootstrap/js/bootstrap.js"></script>
-
+  <script src="http://code.angularjs.org/angular-0.10.5.js" ng:autobind></script>
 <script>function FormBuilderCtrl(){
-    var scope = this;
+   var scope = this;
     scope.newField = {};
     scope.fields = [{
         type: 'text',
