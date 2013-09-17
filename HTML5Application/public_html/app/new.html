@@ -145,7 +145,7 @@ and open the template in the editor.
     
     
     <h2>Schema Preview</h2>
-    <div ng-repeat="field in fields.$orderBy('order')">
+    <div ng-repeat="field in fields">
         <ng-switch on="field.type">
             <h3 ng-switch-when="header">
                 {{field.name}}
@@ -197,7 +197,8 @@ and open the template in the editor.
     
 <h2>User form submission</h2>
 <form ng-submit="addToUserData()">
-<div ng-repeat="field in userData.$orderBy('order')">
+<!--<div ng-repeat="field in userData.$orderBy('order')">-->
+<div ng-repeat="field in userData">
         <ng-switch on="field.type">
             <h3 ng-switch-when="header">
                 {{field.name}}
