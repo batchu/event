@@ -1,6 +1,6 @@
  event.controller('eventCtrl', function($scope,eventService) {
    $scope.schemaList=eventService.getSchemaList();
-     $scope.newField = {};
+   $scope.newField = {};
     $scope.fields = [{
         type: 'text',
         name: 'Name',

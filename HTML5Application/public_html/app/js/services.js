@@ -73,7 +73,6 @@ var schemaList=[
     }
   ]
   }],
-  []
 ];
 
 var schemaIndex = 0;
