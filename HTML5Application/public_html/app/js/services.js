@@ -1,7 +1,7 @@
 event.factory('eventService',function(){
    var factory = {};
    
-var schemaList=[
+var schemaList=
   [{
       name:"evSchema1",
       id:null,
@@ -72,8 +72,8 @@ var schemaList=[
       "name": "Special Instructions"
     }
   ]
-  }],
-];
+  }]
+;
 
 var schemaIndex = 0;
 var newFieldIndex=0;

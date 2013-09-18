@@ -1,12 +1,10 @@
  event.controller('eventCtrl', function($scope,eventService) {
    $scope.schemaList=eventService.getSchemaList();
-   $scope.newField = {};
-    $scope.fields = [{
-        type: 'text',
-        name: 'Name',
-        placeholder: 'John Doe',
-        order: 10
-    }];
+   $scope.schemaIndex=eventService.getSchemaIndex();
+   $scope.newFieldIndex=eventService.getNewFieldIndex();
+//   $scope.newField =  $scope.schemaList[0].schema[0];
+   $scope.newField =  $scope.schemaList[$scope.schemaIndex].schema[$scope.newFieldIndex];
+    $scope.fields = $scope.schemaList[$scope.schemaIndex].schema;
     $scope.editing = false;
     $scope.userData=angular.copy($scope.fields);
     $scope.userDataArray=[];
