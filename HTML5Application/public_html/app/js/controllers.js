@@ -1,5 +1,6 @@
- event.controller('eventCtrl', function($scope) {
-    $scope.newField = {};
+ event.controller('eventCtrl', function($scope,eventService) {
+   $scope.schemaList=eventService.getSchemaList();
+     $scope.newField = {};
     $scope.fields = [{
         type: 'text',
         name: 'Name',
@@ -18,6 +19,11 @@
             result += '-' + $scope.token(slug2);
         }
         return result;
+    };
+    $scope.addSchemaToSchemaList = function(){
+        $scope.schemaList.push(angular.copy($scope.fields));
+        $scope.fields=[];
+        
     };
     $scope.saveField = function() {
         if ($scope.newField.type == 'checkboxes') {

@@ -1,9 +1,13 @@
 event.factory('eventService',function(){
    var factory = {};
+var schemaList=[];
 
-// factory.getBills=function(){
-//     return bills;
-// };
+ factory.getSchemaList=function(){
+     return schemaList;
+ };
+ factory.setSchemaList=function(_schemaList){
+    this.schemaList=_schemaList;
+ };
  
  return factory;
 });

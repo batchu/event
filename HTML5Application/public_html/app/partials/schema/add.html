@@ -1,6 +1,7 @@
-
-<div id="jv-formbuilder">
-    <h2>Add a New Schema</h2>
+<div class="row-fluid">
+    <div class="span4 content-divider">
+          
+    <h2>New Schema</h2>
     <form ng-submit="saveField()">
         <div class="input">
             <label for="newField-name">Field Name:</label>
@@ -40,7 +41,7 @@
                 <legend><a ng-click="addOption()">Add Option</a></legend>
                 <div class="newOption" ng-repeat="option in newField.options">
                     <strong>Option:</strong>
-                    <button class="delete" ng-click="splice(option, newField.options)">Remove</button>
+                    <button class="btn btn-danger" ng-click="splice(option, newField.options)">Remove</button>
                     <label>
                         Name:
                         <input type="text" ng-model="option.name" ng-required>
@@ -58,23 +59,27 @@
             <span ng-switch-when="checkbox"></span>
             <span ng-switch-when="header"></span>
         </ng-switch>
-        <div><input class="" type="submit" value="Save Field"></div>
+        <div>
+            <input class="btn btn-info" type="submit" value="Save">
+            <input class="btn btn-success" ng-click="addSchemaToSchemaList()" type="submit" value="Finish!">
+        </div>
     </form>
-    
-    
-    <h2>Schema Preview</h2>
+            </div>
+            <div class="span4">
+                
+    <h2>Edit Schema</h2>
     <div ng-repeat="field in fields">
         <ng-switch on="field.type">
             <h3 ng-switch-when="header">
                 {{field.name}}
                 <span class="order">{{field.order}}</span>
-                <button class="edit" ng-click="editField(field)">Edit</button>
-                <button class="delete" ng-click="splice(field, fields)">Remove</button>
+                <button class="btn btn-info" ng-click="editField(field)">Edit</button>
+                <button class="btn btn-danger" ng-click="splice(field, fields)">Remove</button>
             </h3>
             <div ng-switch-default class="input {{field.type}}" ng-class="field.required && 'required'">
                 <label>
-                    <button class="edit" ng-click="editField(field)">Edit</button>
-                    <button class="delete" ng-click="splice(field, fields)">Remove</button>
+                    <button class="btn btn-info" ng-click="editField(field)">Edit</button>
+                    <button class="btn btn-danger" ng-click="splice(field, fields)">Remove</button>
                     {{field.name}}
                     <span class="order">{{field.order}}</span>
                 </label>
@@ -111,5 +116,6 @@
     </div>
     <h2>Schema JSON:</h2>
     <pre>{{fields}}</pre>
-</div>
-    
+            </div>
+        </div>
+{{schemaList}}

@@ -8,9 +8,15 @@ and open the template in the editor.
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        
-              <link rel="stylesheet" href="css/app.css"/>
+<!--              <link rel="stylesheet" href="css/app.css"/>-->
         <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css"/>
         <link rel="stylesheet" href="lib/bootstrap-datepicker/css/datepicker.css"/>
+        <style>
+            .content-divider {
+  border-right: 1px solid;
+}
+body { padding-top: 40px; }
+        </style>
     </head>
     <body>
        
@@ -89,8 +95,8 @@ and open the template in the editor.
         </div>
 
 
-        <div class="container">
-            
+        <div class="container" ng-controller="eventCtrl">
+              
                     <div ng-view>
        </div>
                     
@@ -106,4 +112,5 @@ and open the template in the editor.
 <script src="lib/angular-route.js"></script>
 <script src="js/app.js"></script>
 <script src="js/controllers.js"></script>
+<script src="js/services.js"></script>
 <script src="js/routes.js"></script>
