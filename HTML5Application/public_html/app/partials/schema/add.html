@@ -1,7 +1,8 @@
+<h3>New Schema</h3>
 <div class="row-fluid">
     <div class="span4 content-divider">
           
-    <h2>New Schema</h2>
+    <h4>Schema Elements</h4>
     <form ng-submit="saveField()">
         <div class="input">
             <label for="newField-name">Field Name:</label>
@@ -61,21 +62,21 @@
         </ng-switch>
         <div>
             <input class="btn btn-info" type="submit" value="Save">
-            <input class="btn btn-success" ng-click="addSchemaToSchemaList()" type="submit" value="Finish!">
+           
         </div>
     </form>
             </div>
             <div class="span4">
                 
-    <h2>Edit Schema</h2>
+    <h4>Edit Schema</h4>
     <div ng-repeat="field in fields">
         <ng-switch on="field.type">
-            <h3 ng-switch-when="header">
+            <h4 ng-switch-when="header">
                 {{field.name}}
                 <span class="order">{{field.order}}</span>
                 <button class="btn btn-info" ng-click="editField(field)">Edit</button>
                 <button class="btn btn-danger" ng-click="splice(field, fields)">Remove</button>
-            </h3>
+            </h4>
             <div ng-switch-default class="input {{field.type}}" ng-class="field.required && 'required'">
                 <label>
                     <button class="btn btn-info" ng-click="editField(field)">Edit</button>
@@ -114,8 +115,13 @@
             </div>
         </ng-switch>
     </div>
-    <h2>Schema JSON:</h2>
+    <h4>Schema JSON:</h4>
     <pre>{{fields}}</pre>
             </div>
         </div>
-{{schemaList}}
+<!--{{schemaList}}-->
+<p></p>
+<div><span>Schema Name </span><input type="text" ng-modle="fields.name" style="width:100px;" /> 
+    <fieldset><input class="btn btn-success" ng-click="addSchemaToSchemaList()" type="submit" value="Save Schema"></fieldset></div>
+    
+    

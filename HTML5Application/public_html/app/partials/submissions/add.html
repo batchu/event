@@ -1,7 +1,7 @@
 <h2>Register for an Event</h2>
 <form ng-submit="addToUserData()">
 <!--<div ng-repeat="field in userData.$orderBy('order')">-->
-<div ng-repeat="field in userData">
+<div ng-repeat="field in schemaList[0]">
         <ng-switch on="field.type">
             <h3 ng-switch-when="header">
                 {{field.name}}
