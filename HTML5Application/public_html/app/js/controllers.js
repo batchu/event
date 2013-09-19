@@ -94,6 +94,19 @@ $scope.newSchemaName;//eventService.getNewSchemaName();
 //      eventService.setNewSchemaName("");
 //      $scope.newSchemaName="";//eventService.getNewSchemaName();
   };
+  $scope.editSchemaFn=function(){
+    
+//      newSchema.name=$scope.newSchemaName;
+      $scope.editSchema.schema=angular.copy($scope.fields);
+       $scope.schemaList.splice($scope.editSchema.index,1);
+      $scope.schemaList.push(angular.copy($scope.editSchema));
+       $scope.fields = [];//$scope.schemaList[$scope.schemaIndex].schema
+      $scope.editSchema={name:null,id:null,schema:[]};
+      $scope.newField = { order: 0 };
+      $scope.editingSchema=false;
+//      eventService.setNewSchemaName("");
+//      $scope.newSchemaName="";//eventService.getNewSchemaName();
+  };
   $scope.setupEditSchema=function(schemaId){
       $scope.editSchemaIndex=null;
       $scope.editingSchema=true;
@@ -106,6 +119,7 @@ $scope.newSchemaName;//eventService.getNewSchemaName();
  $scope.editSchemaIndex=i;
     $scope.fields = $scope.schemaList[i].schema;
     $scope.editSchema=$scope.schemaList[i];
+    $scope.editSchema.index=i;
   }
 }
   };
