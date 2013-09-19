@@ -1,5 +1,5 @@
 <h3 ng-show="!editingSchema">New Schema</h3>
-<h3 ng-show="editingSchema">Editing Schema {{editSchema.name}}</h3>
+<h3 ng-show="editingSchema">Editing {{editSchema.name}}</h3>
 <div class="row-fluid">
     <div class="span4 content-divider">
           
@@ -124,7 +124,7 @@
 <p></p>
 <div ng-show="!editingSchema"><span>Schema Name </span><input type="text" ng-model="newSchema.name" style="width:100px;" /> 
     <!--<fieldset><input class="btn btn-success" ng-click="addSchemaToSchemaList()" type="submit" value="Save Schema"></fieldset></div>-->
-    <fieldset><input  class="btn btn-success" ng-click="saveSchema()" type="submit" value="Save Schema"></fieldset></div>
+    <fieldset><a href="#/schema/list"  class="btn btn-success" ng-click="saveSchema()" type="submit">Save Schema</a></fieldset></div>
     
 <div ng-show="editingSchema"><span>Schema Name </span><input type="text" ng-model="editSchema.name" style="width:100px;" /> 
     <!--<fieldset><input class="btn btn-success" ng-click="addSchemaToSchemaList()" type="submit" value="Save Schema"></fieldset></div>-->

@@ -1,31 +1,32 @@
- event.controller('eventCtrl', function($scope,eventService) {
-     
-     $scope.init = function(){
-           $scope.schemaList=eventService.getSchemaList();
-   $scope.schemaIndex=eventService.getSchemaIndex();
-   $scope.newFieldIndex=eventService.getNewFieldIndex();
-     $scope.newSchema={name:null,id:parseInt(Math.floor(Math.random() * 10000 + 1)),schema:[]};
+event.controller('eventCtrl', function($scope, eventService) {
+
+    $scope.init = function() {
+        $scope.schemaList = eventService.getSchemaList();
+        $scope.schemaIndex = eventService.getSchemaIndex();
+        $scope.newFieldIndex = eventService.getNewFieldIndex();
+        $scope.newSchema = {name: null, id: parseInt(Math.floor(Math.random() * 10000 + 1)), schema: []};
 //   console.log(JSON.stringify($scope.schemaList));
 //   $scope.newField =  $scope.schemaList[0].schema[0];
-   // $scope.schemaListLength = $scope.schemaList.length;
+        // $scope.schemaListLength = $scope.schemaList.length;
 //Check if the top element of the schema array is empty using jQuery
 //if(!jQuery.isEmptyObject($scope.schemaList[$scope.schemaIndex].schema[ $scope.schemaList[$scope.schemaIndex].schema.length-1])){
 //var isLastEleOfSchemaEmpty = jQuery.isEmptyObject($scope.schemaList[$scope.schemaIndex].schema[ $scope.schemaList[$scope.schemaIndex].schema.length-1]);
 //if(!isLastEleOfSchemaEmpty){
 //    $scope.schemaList[$scope.schemaIndex].schema.push({});
 //}
-$scope.newField = { order: 0 };
-$scope.newSchemaName;//eventService.getNewSchemaName();
+        $scope.newField = {order: 0};
+        $scope.newSchemaName;//eventService.getNewSchemaName();
 //   $scope.newField =  $scope.schemaList[$scope.schemaIndex].schema[$scope.schemaList[$scope.schemaIndex].schema.length-1];
 //   $scope.newField =  $scope.schemaList[$scope.schemaIndex].schema[$scope.newFieldIndex];
 //    $scope.fields = $scope.schemaList[$scope.schemaIndex].schema;
-    $scope.fields =[]; $scope.schemaList[$scope.schemaIndex].schema;
-     };
- $scope.init();
+        $scope.fields = [];
+        $scope.schemaList[$scope.schemaIndex].schema;
+    };
+    $scope.init();
     $scope.editing = false;
     $scope.editingSchema = false;
-    $scope.userData=angular.copy($scope.fields);
-    $scope.userDataArray=[];
+    $scope.userData = angular.copy($scope.fields);
+    $scope.userDataArray = [];
     $scope.tokenize = function(slug1, slug2) {
         var result = slug1;
         result = result.replace(/[^-a-zA-Z0-9,&\s]+/ig, '');
@@ -54,7 +55,7 @@ $scope.newSchemaName;//eventService.getNewSchemaName();
             $scope.fields.push($scope.newField);
             $scope.userData.push(angular.copy($scope.newField));
         }
-        $scope.newField = { order: 0 };
+        $scope.newField = {order: 0};
 //        $scope.schemaList[$scope.schemaIndex].schema.push(angular.copy($scope.newField));
 //        $scope.newField =  $scope.schemaList[$scope.schemaIndex].schema[$scope.schemaList[$scope.schemaIndex].schema.length-1];
 //         $scope.userData=angular.copy($scope.fields);
@@ -70,60 +71,60 @@ $scope.newSchemaName;//eventService.getNewSchemaName();
         if ($scope.newField.options === undefined) {
             $scope.newField.options = [];
         }
-        $scope.newField.options.push({ order: 0 });
+        $scope.newField.options.push({order: 0});
     };
     $scope.typeSwitch = function(type) {
-        var field_ar = ['checkboxes','select','radio'];
+        var field_ar = ['checkboxes', 'select', 'radio'];
         if (field_ar.indexOf(type) === -1)
             return type;
         return 'multiple';
     };
     $scope.addToUserData = function() {
-       $scope.userDataArray.push(angular.copy($scope.userData));
-       $scope.userData = { order: 0 };
-        $scope.userData=angular.copy($scope.fields);
+        $scope.userDataArray.push(angular.copy($scope.userData));
+        $scope.userData = {order: 0};
+        $scope.userData = angular.copy($scope.fields);
     };
 
-  $scope.saveSchema=function(){
-    
+    $scope.saveSchema = function() {
+
 //      newSchema.name=$scope.newSchemaName;
-      $scope.newSchema.schema=angular.copy($scope.fields);
-      $scope.schemaList.push(angular.copy($scope.newSchema));
-       $scope.fields = [];//$scope.schemaList[$scope.schemaIndex].schema
-      $scope.newSchema={name:null,id:parseInt(Math.floor(Math.random() * 100 + 1)),schema:[]};
+        $scope.newSchema.schema = angular.copy($scope.fields);
+        $scope.schemaList.push(angular.copy($scope.newSchema));
+        $scope.fields = [];//$scope.schemaList[$scope.schemaIndex].schema
+        $scope.newSchema = {name: null, id: parseInt(Math.floor(Math.random() * 100 + 1)), schema: []};
 //      eventService.setNewSchemaName("");
 //      $scope.newSchemaName="";//eventService.getNewSchemaName();
-  };
-  $scope.editSchemaFn=function(){
-    
+    };
+    $scope.editSchemaFn = function() {
+
 //      newSchema.name=$scope.newSchemaName;
-      $scope.editSchema.schema=angular.copy($scope.fields);
-       $scope.schemaList.splice($scope.editSchema.index,1);
-      $scope.schemaList.push(angular.copy($scope.editSchema));
-       $scope.fields = [];//$scope.schemaList[$scope.schemaIndex].schema
-      $scope.editSchema={name:null,id:null,schema:[]};
-      $scope.newField = { order: 0 };
-      $scope.editingSchema=false;
+        $scope.editSchema.schema = angular.copy($scope.fields);
+        $scope.schemaList.splice($scope.editSchema.index, 1);
+        $scope.schemaList.push(angular.copy($scope.editSchema));
+        $scope.fields = [];//$scope.schemaList[$scope.schemaIndex].schema
+        $scope.editSchema = {name: null, id: null, schema: []};
+        $scope.newField = {order: 0};
+        $scope.editingSchema = false;
 //      eventService.setNewSchemaName("");
 //      $scope.newSchemaName="";//eventService.getNewSchemaName();
-  };
-  $scope.setupEditSchema=function(schemaId){
-      $scope.editSchemaIndex=null;
-      $scope.editingSchema=true;
-      for(var i = 0; i <  $scope.schemaList.length; i++)
-{
-  if( $scope.schemaList[i].id ===schemaId)
-  {
+    };
+    $scope.setupEditSchema = function(schemaId) {
+        $scope.editSchemaIndex = null;
+        $scope.editingSchema = true;
+        for (var i = 0; i < $scope.schemaList.length; i++)
+        {
+            if ($scope.schemaList[i].id === schemaId)
+            {
 //       $scope.newField =  $scope.schemaList[$scope.schemaIndex].schema[$scope.schemaList[$scope.schemaIndex].schema.length-1];
 //   $scope.newField =  $scope.schemaList[$scope.schemaIndex].schema[$scope.newFieldIndex];
- $scope.editSchemaIndex=i;
-    $scope.fields = $scope.schemaList[i].schema;
-    $scope.editSchema=$scope.schemaList[i];
-    $scope.editSchema.index=i;
-  }
-}
-  };
-  $scope.setupDeleteSchema=function(schemaId){
-      
-  };
+                $scope.editSchemaIndex = i;
+                $scope.fields = $scope.schemaList[i].schema;
+                $scope.editSchema = $scope.schemaList[i];
+                $scope.editSchema.index = i;
+            }
+        }
+    };
+    $scope.deleteSchema = function(schemaIndexId) {
+        $scope.schemaList.splice(schemaIndexId, 1);
+    };
 });
