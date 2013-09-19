@@ -13,8 +13,8 @@ var isLastEleOfSchemaEmpty = jQuery.isEmptyObject($scope.schemaList[$scope.schem
 if(!isLastEleOfSchemaEmpty){
     $scope.schemaList[$scope.schemaIndex].schema.push({});
 }
-
-   $scope.newField =  $scope.schemaList[$scope.schemaIndex].schema[$scope.schemaListLength];
+$scope.newField = { order: 0 };
+//   $scope.newField =  $scope.schemaList[$scope.schemaIndex].schema[$scope.schemaList[$scope.schemaIndex].schema.length-1];
 //   $scope.newField =  $scope.schemaList[$scope.schemaIndex].schema[$scope.newFieldIndex];
     $scope.fields = $scope.schemaList[$scope.schemaIndex].schema;
      };
@@ -32,13 +32,13 @@ if(!isLastEleOfSchemaEmpty){
         }
         return result;
     };
-    $scope.addSchemaToSchemaList = function(){
-        $scope.
-        $scope.init();
-//        $scope.schemaList.push(angular.copy($scope.fields));
-//        $scope.fields=[];
-        
-    };
+//    $scope.addSchemaToSchemaList = function(){
+//        $scope.
+//        $scope.init();
+////        $scope.schemaList.push(angular.copy($scope.fields));
+////        $scope.fields=[];
+//        
+//    };
     $scope.saveField = function() {
         if ($scope.newField.type == 'checkboxes') {
             $scope.newField.value = {};
@@ -51,6 +51,8 @@ if(!isLastEleOfSchemaEmpty){
             $scope.userData.push(angular.copy($scope.newField));
         }
         $scope.newField = { order: 0 };
+//        $scope.schemaList[$scope.schemaIndex].schema.push(angular.copy($scope.newField));
+//        $scope.newField =  $scope.schemaList[$scope.schemaIndex].schema[$scope.schemaList[$scope.schemaIndex].schema.length-1];
 //         $scope.userData=angular.copy($scope.fields);
     };
     $scope.editField = function(field) {
