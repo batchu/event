@@ -4,6 +4,7 @@
            $scope.schemaList=eventService.getSchemaList();
    $scope.schemaIndex=eventService.getSchemaIndex();
    $scope.newFieldIndex=eventService.getNewFieldIndex();
+     $scope.newSchema={name:null,id:parseInt(Math.floor(Math.random() * 10000 + 1)),schema:[]};
 //   console.log(JSON.stringify($scope.schemaList));
 //   $scope.newField =  $scope.schemaList[0].schema[0];
    // $scope.schemaListLength = $scope.schemaList.length;
@@ -14,7 +15,7 @@
 //    $scope.schemaList[$scope.schemaIndex].schema.push({});
 //}
 $scope.newField = { order: 0 };
-$scope.schemaName="sdfsdf";
+$scope.newSchemaName;//eventService.getNewSchemaName();
 //   $scope.newField =  $scope.schemaList[$scope.schemaIndex].schema[$scope.schemaList[$scope.schemaIndex].schema.length-1];
 //   $scope.newField =  $scope.schemaList[$scope.schemaIndex].schema[$scope.newFieldIndex];
 //    $scope.fields = $scope.schemaList[$scope.schemaIndex].schema;
@@ -83,12 +84,13 @@ $scope.schemaName="sdfsdf";
     };
 
   $scope.saveSchema=function(){
-      var newSchema={name:null,id:null,schema:[]};
-      newSchema.name=$scope.schemaName;
-      newSchema.id=null;
-      newSchema.schema=angular.copy($scope.fields);
-      $scope.schemaList.push(angular.copy(newSchema));
+    
+//      newSchema.name=$scope.newSchemaName;
+      $scope.newSchema.schema=angular.copy($scope.fields);
+      $scope.schemaList.push(angular.copy($scope.newSchema));
        $scope.fields = [];//$scope.schemaList[$scope.schemaIndex].schema
-       $scope.schemaName="";
+      $scope.newSchema={name:null,id:parseInt(Math.floor(Math.random() * 100 + 1)),schema:[]};
+//      eventService.setNewSchemaName("");
+//      $scope.newSchemaName="";//eventService.getNewSchemaName();
   };
 });

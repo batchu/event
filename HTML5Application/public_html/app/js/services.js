@@ -2,82 +2,13 @@ event.factory('eventService',function(){
    var factory = {};
    
 var schemaList=
-  [{
-      name:"evSchema1",
-      id:null,
-      schema:[
-    {
-      "type": "text",
-      "name": "Name",
-      "placeholder": "John Doe",
-      "order": 10
-    },
-    {
-      "name": "Name",
-      "type": "text",
-      "placeholder": "Event Name"
-    },
-    {
-      "order": 0,
-      "name": "Packages",
-      "type": "select",
-      "options": [
-        {
-          "order": 0,
-          "name": "Starter",
-          "value": "s"
-        },
-        {
-          "order": 0,
-          "name": "Intermediate",
-          "value": "i"
-        },
-        {
-          "order": 0,
-          "name": "Advanced",
-          "value": "a"
-        }
-      ]
-    },
-    {
-      "order": 0,
-      "name": "Are you Single?",
-      "type": "radio",
-      "options": [
-        {
-          "order": 0,
-          "name": "Yes",
-          "value": "yes"
-        },
-        {
-          "order": 0,
-          "name": "No",
-          "value": "no"
-        }
-      ]
-    },
-    {
-      "order": 0,
-      "type": "phone",
-      "name": "Phone Number"
-    },
-    {
-      "order": 0,
-      "name": "Email",
-      "type": "email"
-    },
-    {
-      "order": 0,
-      "type": "text",
-      "name": "Special Instructions"
-    }
-  ]
-  }]
+  [{"name":"evSchema1","id":3451,"schema":[{"type":"text","name":"Name","placeholder":"John Doe","order":10},{"name":"Name","type":"text","placeholder":"Event Name"},{"order":0,"name":"Packages","type":"select","options":[{"order":0,"name":"Starter","value":"s"},{"order":0,"name":"Intermediate","value":"i"},{"order":0,"name":"Advanced","value":"a"}]},{"order":0,"name":"Are you Single?","type":"radio","options":[{"order":0,"name":"Yes","value":"yes"},{"order":0,"name":"No","value":"no"}]},{"order":0,"type":"phone","name":"Phone Number"},{"order":0,"name":"Email","type":"email"},{"order":0,"type":"text","name":"Special Instructions"}]},{"name":"sdfsdf","id":234534,"schema":[{"order":0,"name":"asdfasdf","type":"radio","options":[{"order":0,"name":"asdf","value":"dasfdsaf"}]}]},{"name":"schema3","id":53455,"schema":[{"order":0,"name":"name","type":"text"}]}]
 ;
 
 var schemaIndex = 0;
 var newFieldIndex=0;
 var submissions=[];
+var newSchemaName="";
 
  factory.getSchemaList=function(){
      return schemaList;
@@ -103,6 +34,12 @@ var submissions=[];
  };
  factory.setNewFieldIndex=function(_newFieldIndex){
     this.newFieldIndex=_newFieldIndex;
+ };
+  factory.getNewSchemaName=function(){
+     return newSchemaName;
+ };
+ factory.setNewSchemaName=function(_newSchemaName){
+    this.newSchemaName=_newSchemaName;
  };
  return factory;
  

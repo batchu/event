@@ -1,1 +1,43 @@
-<h2>Schema List</h2>{{schemaList}}
+<h2>Schema List</h2>
+
+
+
+
+<table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+          
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+<!--          <tr ng-repeat="schema in bills | filter:query">
+            <td>{{ schema.date}}</td>
+{{ schema.date.monthOfYear }}/{{ schema.date.dayOfMonth}}/{{ schema.date.yearOfCentury}}
+            <td>{{ schema.title }}</td>
+            <td>${{ schema.total }}</td>
+            <td>
+              <button class="btn btn-small" href="#editBill">
+                <i class="icon-edit"></i>&nbsp;Edit
+              </button>
+            </td>
+          </tr>-->
+          <!--<tr ng-repeat="schema in schemaList | filter:query | orderBy:'date'">-->
+          <tr ng-repeat="schema in schemaList">
+            <td>{{ schema.id}}</td>
+            <td>{{ schema.name }}</td>
+            <td>
+                
+               
+              <a  href="#/schema/edit/{{schema.id}}"><i class="icon-pencil "></i></a>
+               <a href="#/schema/delete/{{schema.id}}"><i class="icon-trash "></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+{{schemaList}}
