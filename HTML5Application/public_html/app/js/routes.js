@@ -1,5 +1,5 @@
 event.config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/schema/list', {templateUrl: 'partials/schema/list.html',controller:"eventCtrl"});
+    $routeProvider.when('/schema/list', {templateUrl: 'partials/schema/list.html'});
     $routeProvider.when('/schema/add', {templateUrl: 'partials/schema/add.html'});
     $routeProvider.when('/events/list', {templateUrl: 'partials/events/list.html'});
     $routeProvider.when('/events/add', {templateUrl: 'partials/events/add.html'});

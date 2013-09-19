@@ -1,10 +1,24 @@
  event.controller('eventCtrl', function($scope,eventService) {
-   $scope.schemaList=eventService.getSchemaList();
+     
+     $scope.init = function(){
+           $scope.schemaList=eventService.getSchemaList();
    $scope.schemaIndex=eventService.getSchemaIndex();
    $scope.newFieldIndex=eventService.getNewFieldIndex();
+//   console.log(JSON.stringify($scope.schemaList));
 //   $scope.newField =  $scope.schemaList[0].schema[0];
-   $scope.newField =  $scope.schemaList[$scope.schemaIndex].schema[$scope.newFieldIndex];
+   // $scope.schemaListLength = $scope.schemaList.length;
+//Check if the top element of the schema array is empty using jQuery
+//if(!jQuery.isEmptyObject($scope.schemaList[$scope.schemaIndex].schema[ $scope.schemaList[$scope.schemaIndex].schema.length-1])){
+var isLastEleOfSchemaEmpty = jQuery.isEmptyObject($scope.schemaList[$scope.schemaIndex].schema[ $scope.schemaList[$scope.schemaIndex].schema.length-1]);
+if(!isLastEleOfSchemaEmpty){
+    $scope.schemaList[$scope.schemaIndex].schema.push({});
+}
+
+   $scope.newField =  $scope.schemaList[$scope.schemaIndex].schema[$scope.schemaListLength];
+//   $scope.newField =  $scope.schemaList[$scope.schemaIndex].schema[$scope.newFieldIndex];
     $scope.fields = $scope.schemaList[$scope.schemaIndex].schema;
+     };
+ $scope.init();
     $scope.editing = false;
     $scope.userData=angular.copy($scope.fields);
     $scope.userDataArray=[];
@@ -19,8 +33,10 @@
         return result;
     };
     $scope.addSchemaToSchemaList = function(){
-        $scope.schemaList.push(angular.copy($scope.fields));
-        $scope.fields=[];
+        $scope.
+        $scope.init();
+//        $scope.schemaList.push(angular.copy($scope.fields));
+//        $scope.fields=[];
         
     };
     $scope.saveField = function() {
