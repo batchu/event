@@ -23,6 +23,7 @@ $scope.newSchemaName;//eventService.getNewSchemaName();
      };
  $scope.init();
     $scope.editing = false;
+    $scope.editingSchema = false;
     $scope.userData=angular.copy($scope.fields);
     $scope.userDataArray=[];
     $scope.tokenize = function(slug1, slug2) {
@@ -92,5 +93,23 @@ $scope.newSchemaName;//eventService.getNewSchemaName();
       $scope.newSchema={name:null,id:parseInt(Math.floor(Math.random() * 100 + 1)),schema:[]};
 //      eventService.setNewSchemaName("");
 //      $scope.newSchemaName="";//eventService.getNewSchemaName();
+  };
+  $scope.setupEditSchema=function(schemaId){
+      $scope.editSchemaIndex=null;
+      $scope.editingSchema=true;
+      for(var i = 0; i <  $scope.schemaList.length; i++)
+{
+  if( $scope.schemaList[i].id ===schemaId)
+  {
+//       $scope.newField =  $scope.schemaList[$scope.schemaIndex].schema[$scope.schemaList[$scope.schemaIndex].schema.length-1];
+//   $scope.newField =  $scope.schemaList[$scope.schemaIndex].schema[$scope.newFieldIndex];
+ $scope.editSchemaIndex=i;
+    $scope.fields = $scope.schemaList[i].schema;
+    $scope.editSchema=$scope.schemaList[i];
+  }
+}
+  };
+  $scope.setupDeleteSchema=function(schemaId){
+      
   };
 });

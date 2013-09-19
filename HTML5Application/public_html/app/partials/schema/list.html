@@ -31,8 +31,10 @@
             <td>
                 
                
-              <a  href="#/schema/edit/{{schema.id}}"><i class="icon-pencil "></i></a>
-               <a href="#/schema/delete/{{schema.id}}"><i class="icon-trash "></i></a>
+              <a ng-click="setupEditSchema(schema.id)" href="#/schema/edit"><i class="icon-pencil "></i></a>
+              <!--<a ng-click="setupEditSchema(schema.id)" href="#/schema/edit/{{schema.id}}"><i class="icon-pencil "></i></a>-->
+              <!--ng-click="setupeditSchema()"--> 
+               <a ng-click="setupDeleteSchema(schema.id)" href="#/schema/delete/{{schema.id}}"><i class="icon-trash "></i></a>
             </td>
           </tr>
         </tbody>
@@ -40,4 +42,4 @@
 
 
 
-{{schemaList}}
+<!--{{schemaList}}-->
