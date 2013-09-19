@@ -14,6 +14,7 @@ if(!isLastEleOfSchemaEmpty){
     $scope.schemaList[$scope.schemaIndex].schema.push({});
 }
 $scope.newField = { order: 0 };
+$scope.schemaName="";
 //   $scope.newField =  $scope.schemaList[$scope.schemaIndex].schema[$scope.schemaList[$scope.schemaIndex].schema.length-1];
 //   $scope.newField =  $scope.schemaList[$scope.schemaIndex].schema[$scope.newFieldIndex];
     $scope.fields = $scope.schemaList[$scope.schemaIndex].schema;
@@ -40,7 +41,7 @@ $scope.newField = { order: 0 };
 //        
 //    };
     $scope.saveField = function() {
-        if ($scope.newField.type == 'checkboxes') {
+        if ($scope.newField.type === 'checkboxes') {
             $scope.newField.value = {};
         }
         if ($scope.editing !== false) {
@@ -70,15 +71,17 @@ $scope.newField = { order: 0 };
     };
     $scope.typeSwitch = function(type) {
         var field_ar = ['checkboxes','select','radio'];
-        if (field_ar.indexOf(type) == -1)
+        if (field_ar.indexOf(type) === -1)
             return type;
         return 'multiple';
-    }
+    };
     $scope.addToUserData = function() {
        $scope.userDataArray.push(angular.copy($scope.userData));
        $scope.userData = { order: 0 };
         $scope.userData=angular.copy($scope.fields);
-    }
+    };
 
-
+  $scope.saveSchema=function(){
+      
+  };
 });
