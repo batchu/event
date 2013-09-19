@@ -1,4 +1,4 @@
-event.controller('eventCtrl', function($scope, eventService) {
+event.controller('schemaCtrl', function($scope, eventService) {
 
     $scope.init = function() {
         $scope.schemaList = eventService.getSchemaList();
