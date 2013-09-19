@@ -9,15 +9,16 @@
    // $scope.schemaListLength = $scope.schemaList.length;
 //Check if the top element of the schema array is empty using jQuery
 //if(!jQuery.isEmptyObject($scope.schemaList[$scope.schemaIndex].schema[ $scope.schemaList[$scope.schemaIndex].schema.length-1])){
-var isLastEleOfSchemaEmpty = jQuery.isEmptyObject($scope.schemaList[$scope.schemaIndex].schema[ $scope.schemaList[$scope.schemaIndex].schema.length-1]);
-if(!isLastEleOfSchemaEmpty){
-    $scope.schemaList[$scope.schemaIndex].schema.push({});
-}
+//var isLastEleOfSchemaEmpty = jQuery.isEmptyObject($scope.schemaList[$scope.schemaIndex].schema[ $scope.schemaList[$scope.schemaIndex].schema.length-1]);
+//if(!isLastEleOfSchemaEmpty){
+//    $scope.schemaList[$scope.schemaIndex].schema.push({});
+//}
 $scope.newField = { order: 0 };
-$scope.schemaName="";
+$scope.schemaName="sdfsdf";
 //   $scope.newField =  $scope.schemaList[$scope.schemaIndex].schema[$scope.schemaList[$scope.schemaIndex].schema.length-1];
 //   $scope.newField =  $scope.schemaList[$scope.schemaIndex].schema[$scope.newFieldIndex];
-    $scope.fields = $scope.schemaList[$scope.schemaIndex].schema;
+//    $scope.fields = $scope.schemaList[$scope.schemaIndex].schema;
+    $scope.fields =[]; $scope.schemaList[$scope.schemaIndex].schema;
      };
  $scope.init();
     $scope.editing = false;
@@ -82,6 +83,12 @@ $scope.schemaName="";
     };
 
   $scope.saveSchema=function(){
-      
+      var newSchema={name:null,id:null,schema:[]};
+      newSchema.name=$scope.schemaName;
+      newSchema.id=null;
+      newSchema.schema=angular.copy($scope.fields);
+      $scope.schemaList.push(angular.copy(newSchema));
+       $scope.fields = [];//$scope.schemaList[$scope.schemaIndex].schema
+       $scope.schemaName="";
   };
 });
